@@ -532,66 +532,66 @@ import React from "react";
 
 // 06. React-Hooks 设计动机与工作模式（上）
 
-class ProfilePageClass extends React.Component {
-  showMessage = () => {
-    alert("Followed " + this.props.user);
-  };
+// class ProfilePageClass extends React.Component {
+//   showMessage = () => {
+//     alert("Followed " + this.props.user);
+//   };
 
-  handleClick = () => {
-    setTimeout(this.showMessage, 3000);
-  };
+//   handleClick = () => {
+//     setTimeout(this.showMessage, 3000);
+//   };
 
-  render() {
-    return <button onClick={this.handleClick}>Follow</button>;
-  }
-}
+//   render() {
+//     return <button onClick={this.handleClick}>Follow</button>;
+//   }
+// }
 
-function ProfilePageFunction(props) {
-  const showMessage = () => {
-    alert('Followed ' + props.user);
-  };
+// function ProfilePageFunction(props) {
+//   const showMessage = () => {
+//     alert('Followed ' + props.user);
+//   };
 
-  const handleClick = () => {
-    setTimeout(showMessage, 3000);
-  };
+//   const handleClick = () => {
+//     setTimeout(showMessage, 3000);
+//   };
 
-  return (
-    <button onClick={handleClick}>Follow</button>
-  );
-}
+//   return (
+//     <button onClick={handleClick}>Follow</button>
+//   );
+// }
 
-class App extends React.Component {
-  state = {
-    user: 'Dan',
-  };
-  render() {
-    return (
-      <>
-        <label>
-          <select
-            value={this.state.user}
-            onChange={e => this.setState({ user: e.target.value })}
-          >
-            <option value="Dan">Dan</option>
-            <option value="Sophie">Sophie</option>
-            <option value="Sunil">Sunil</option>
-          </select>
-        </label>
-        <h1>Welcome to {this.state.user}’s profile!</h1>
-        <p>
-          <ProfilePageFunction user={this.state.user} />
-          <b> (function)</b>
-        </p>
-        <p>
-          <ProfilePageClass user={this.state.user} />
-          <b> (class)</b>
-        </p>
-      </>
-    )
-  }
-}
+// class App extends React.Component {
+//   state = {
+//     user: 'Dan',
+//   };
+//   render() {
+//     return (
+//       <>
+//         <label>
+//           <select
+//             value={this.state.user}
+//             onChange={e => this.setState({ user: e.target.value })}
+//           >
+//             <option value="Dan">Dan</option>
+//             <option value="Sophie">Sophie</option>
+//             <option value="Sunil">Sunil</option>
+//           </select>
+//         </label>
+//         <h1>Welcome to {this.state.user}’s profile!</h1>
+//         <p>
+//           <ProfilePageFunction user={this.state.user} />
+//           <b> (function)</b>
+//         </p>
+//         <p>
+//           <ProfilePageClass user={this.state.user} />
+//           <b> (class)</b>
+//         </p>
+//       </>
+//     )
+//   }
+// }
 
-export default App;
+// export default App;
 
 // 类组件和函数式组件的区别
 // 一：代码层面
@@ -616,3 +616,19 @@ export default App;
 
 // Hooks的本质：
 // 帮助函数式组件补全相对于类组件上缺失的能力
+
+import Layouts from './layouts/';
+
+class App extends React.Component {
+  render () {
+    return (
+      <React.Fragment>
+        <Layouts>
+        
+        </Layouts>
+      </React.Fragment>
+    )
+  }
+}
+
+export default App;
