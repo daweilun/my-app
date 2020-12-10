@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { NavLink, Switch, Route } from 'react-router-dom';
 import Home from '../pages/Dashboard/Home';
 import Jsx from '../pages/Dashboard/Jsx';
+import Hooks from '../pages/Dashboard/Hooks';
 
 class Layout extends Component{
   // renderMenuList(routes) {
@@ -23,10 +24,12 @@ class Layout extends Component{
         <ul>
           <li><NavLink to="/dashboard/home">home</NavLink></li>
           <li><NavLink to="/dashboard/jsx">jsx</NavLink></li>
+          <li><NavLink to="/dashboard/Hooks">Hooks</NavLink></li>
         </ul>
         <Switch>
           <Route path="/dashboard/home" component={Home} />
           <Route path="/dashboard/jsx" component={Jsx} />
+          <Route path="/dashboard/hooks" component={Hooks} />
           {/* {this.renderMenuList(routes)} */}
         </Switch>
       </div>
